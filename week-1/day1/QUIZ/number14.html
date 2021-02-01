@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let temp = 0;
+        let counter = 0;
+        let inputNumber = Number(prompt("Enter Number : "));
+        let max = inputNumber;
+        let min = inputNumber;
+        
+        while (inputNumber != -99){
+            if (max < inputNumber){
+                max = inputNumber;
+            }
+            if (min > inputNumber){
+                min = inputNumber;
+            }
+
+            inputNumber = Number(prompt("Enter Number : "))
+        }
+        alert ("Largest : "+max+"Smallest:"+min+" ");
+    </script>
+</body>
+</html>

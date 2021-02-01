@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = 0;
+        let sum = 0;
+        let budget = Number(prompt("Enter Monthly Budget : $"))
+        alert ("Money spent this month (type -1 to quit)")
+        n = Number(prompt("Enter Cost :"));
+        while (n !==-1){
+            sum += n; 
+            n = Number(prompt("Enter Cost :"));
+            
+        }
+        alert("Total Cost :$"+sum);
+        if(budget > sum){
+            budget = budget - sum;
+            alert("You are $"+budget+" under your budget.");
+        }else{
+            alert ("You are over your budget");
+        }
+    </script>
+</body>
+</html>

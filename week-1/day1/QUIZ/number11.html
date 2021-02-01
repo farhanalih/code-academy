@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let rand = Math.floor(Math.random*20);
+        let guessNumb = Number(prompt("Enter Number (0 - 20) : "));
+        let correct = guessNumb == rand;
+
+        while(!correct){
+            if(guessNumb<rand){
+                alert ("too low, try again");
+            }else{
+                alert("too High, try again");
+            }
+            guessNumb = Number(prompt("Enter Number (0 - 20) : "));
+            correct = guessNumb == rand;
+        }
+
+        alert ("Good Job, the Number is :"+ rand);
+    </script>
+</body>
+</html>
