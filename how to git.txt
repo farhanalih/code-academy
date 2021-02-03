@@ -1,0 +1,6 @@
+how to push git 
+
+git checkout -b day02  //day02 itu branch baru ; -b itu bikin branch
+git add .
+git commit -m "message" // -m bikin pesan
+git push origin day02 //

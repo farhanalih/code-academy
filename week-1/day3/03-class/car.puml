@@ -1,0 +1,28 @@
+@startuml classdiagram-car
+
+class Car{
+    +merk: String
+    +tahun : String
+
+    +info():String
+}
+ 
+class Taxi extends Car{
+    +totalRevenue():Number
+}
+
+class Main {
+    Main()
+}
+
+interface apiCar{
+    +totalCar(listCar):Number
+}
+
+Main --> Car
+Main --> Taxi
+Main --> apiCar
+apiCar --> Car
+apiCar --> Taxi
+
+@enduml

@@ -1,6 +1,6 @@
 //with replace 
 function replaceString (str){
-    let string = str.replace(/ /g,"%20");
+    let string = str.replace(/ /g,"%20");// g means global
     return string
 }
 console.log(replaceString("Mr Code Id"));

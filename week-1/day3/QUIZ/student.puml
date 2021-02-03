@@ -1,0 +1,51 @@
+@startuml classdiagram-student
+
+class Student{
+    +name: String
+    +city: String
+    +education : String
+    +grade : String
+    +bootcamp : String
+    +batch : String
+    +year : date
+    +skillpoint : Number 
+}
+
+class regular extends Student{
+    +netPrice : Number
+}
+
+class beasiswa extends Student{
+    +intensif : Number
+}
+
+class apistudent{
+    countStudent()
+    countBeasiswa()
+    countRegular()
+    countUangSaku()
+    countNetPrice()
+    countNodeJS()
+    countGolang()
+    countPython()
+}
+
+class main {
+    inputStudent()
+    showStudent()
+    showBeasiswa()
+    showUangSaku()
+    showNetPrice()
+    showNodeJS()
+    showGolang()
+    showPython()
+}
+
+apistudent --> Student
+apistudent --> regular
+apistudent --> beasiswa
+main --> Student
+main --> apistudent
+main --> beasiswa
+main --> regular
+@enduml
