@@ -1,0 +1,5 @@
+select a.region_id,a.region_name,count(country_id) as total
+	from regions a inner join countries b 
+	on a.region_id = b.region_id
+	group by a.region_id
+	order by region_id ;

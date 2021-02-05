@@ -1,0 +1,9 @@
+--tampilkan data berdasarkan department pada negara
+select a.region_id,a.region_name,b.country_id,b.country_name,count(d.department_id) as total
+from regions a inner join countries b
+on a.region_id = b.region_id 
+inner join locations l
+on b.country_id = l.country_id
+inner join departments d
+on l.location_id = d.location_id
+group by a.region_id,a.region_name,b.country_id,b.country_name;

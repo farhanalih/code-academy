@@ -31,14 +31,16 @@ class apistudent{
 }
 
 class main {
-    inputStudent()
-    showStudent()
-    showBeasiswa()
-    showUangSaku()
-    showNetPrice()
-    showNodeJS()
-    showGolang()
-    showPython()
+    ' inputStudent()
+    ' showStudent()
+    ' showBeasiswa()
+    ' showUangSaku()
+    ' showNetPrice()
+    ' showNodeJS()
+    ' showGolang()
+    ' showPython()
+
+    main():function
 }
 
 apistudent --> Student
