@@ -1,0 +1,14 @@
+
+.nav__toggle {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .nav__toggle {
+    display: block;
+  }
+  .nav__menu {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

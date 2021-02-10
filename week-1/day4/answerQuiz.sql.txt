@@ -1,0 +1,112 @@
+insert into province (prov_name) values 
+('Jawa Barat'),('Jakarta'),('Yogyakarta');
+select * from province;
+update province set prov_name = 'Jawa Timur' where prov_id = 3;
+
+insert into city (city_name,city_prov_id) values
+('Cimahi',1),('Bekasi',1),('Bandung',1),('Semarang',2),('Magelang',2),('Purwokerto',2),('Surabaya',3),('Kediri',3),('Malang',3);
+select * from city;
+
+insert into users (user_name,user_email,user_password) values
+('username1','username1@gmail.com','123'),('username2','username2@gmail.com','124'),('username3','username3@gmail.com','125');
+
+insert into roles (role_name) values ('Guest'),('Admin'),('Buyer'),('Seller');
+select * from roles;
+
+insert into user_roles (user_id,role_id) values (1,2),(2,3),(3,4);
+
+insert into address (addr_email,addr_fullname,addr_phone_number,adr_is_default,addr_zipcode,addr_street1,addr_street2,addr_city_id,addr_user_id) values
+('username1@gmail.com','Farhan Ali','081311581111',true,'17999','Jl.soekarno','No.99',2,1),
+('username2@gmail.com','Sarah Valiziane','081311582222',true,'17666','Jl.habibie','No.666',3,2),
+('username3@gmail.com','Shirleen Alzena','081311583333',true,'17333','Jl.Patimura','No.333',3,3);
+
+insert into category (cate_name)values ('Laptop'),('Handphone'),('Alat Olahraga');
+insert into product (prod_title,prod_description,prod_stock,prod_price,prod_condition,prod_manufacture,prod_image,prod_cate_id) values
+('Laptop Asus','Gaming',5,1000,'New','Asus','asus.com/image',1),
+('Laptop Dell','Office',8,500,'New','Dell','dell.com/image',1),
+('Samsung S8','Ram/Hdd 4/64',8,350,'New','Samsung','samsung.com/image',2),
+('Sepeda','Sepeda Lipat',8,2000,'New','Brompton','brompton.com/image',3);
+
+insert into product_images (prim_id,prim_file_name,prim_path,prim_prod_id) values
+('4f11eeb8-f866-11e7-b865-ec8eb59d52d1','asus.jpg','/image',1),('4f11eeb8-f866-11e7-b865-ec8eb59d52d2','dell.jpg','/image',2),('4f11eeb8-f866-11e7-b865-ec8eb59d52d3','samsung.jpg','/image',3),('4f11eeb8-f866-11e7-b865-ec8eb59d52d4','brompton.jpg','/image',4);
+select * from product_images;
+update product_images set prim_prod_id = 1 where prim_file_name = 'dell.jpg';
+
+select * from users;
+
+select * from orders;
+delete from orders;
+insert into cart(cart_created_on,cart_is_closed,cart_total,cart_user_id) values 
+('2021-02-03',true,2,1),('2021-02-03',true,3,2),('2021-02-03',true,1,3),('2021-02-02',true,2,1),('2021-02-03',true,2,3);
+delete from cart;
+insert into product (prod_title,prod_description,prod_stock,prod_price,prod_condition,prod_manufacture,prod_image,prod_cate_id) values
+('Laptop Asus','Gaming',5,1000,'New','Asus','asus.com/image',1),
+('Laptop Dell','Office',8,500,'New','Dell','dell.com/image',1),
+('Samsung S8','Ram/Hdd 4/64',8,350,'New','Samsung','samsung.com/image',2),
+('Sepeda','Sepeda Lipat',8,2000,'New','Brompton','brompton.com/image',3);
+alter table orders add column total_payment int;
+insert into order_detail (ordi_quantity,ordi_price,ordi_cart_id,ordi_prod_id,ordi_orde_name) values
+
+insert into cart (cart_created_on,cart_is_closed,cart_total,cart_user_id) values
+('2021-02-03',true,2,1),('2021-02-03',true,3,2),('2021-02-03',true,1,3),('2021-02-02',true,2,1),('2021-02-03',true,2,3);
+update cart set cart_total = 3 where cart_id = 6;
+select * from cart;
+select * from order_detail;
+insert into orders (order_name,order_create_on,order_is_closed,order_total,order_user_id,total_payment) values
+('ORD-040221#0001','2021-02-04',false,3,1,1500);
+insert into orders (order_name,order_create_on,order_is_closed,order_total,order_user_id,total_payment) values
+('ORD-040221#0002','2021-02-03',false,3,2,3350);
+insert into orders (order_name,order_create_on,order_is_closed,order_total,order_user_id,total_payment) values
+('ORD-040221#0003','2021-02-03',false,1,3,500);
+insert into orders (order_name,order_create_on,order_is_closed,order_total,order_user_id,total_payment) values
+('ORD-040221#0004','2021-02-02',false,2,1,850);
+insert into orders (order_name,order_create_on,order_is_closed,order_total,order_user_id,total_payment) values
+('ORD-030221#0004','2021-02-03',false,2,3,700);
+
+insert into order_detail (ordi_quantity,ordi_price,ordi_cart_id,ordi_prod_id,ordi_order_name) values
+(1,1000,6,1,'ORD-040221#0001'),(1,500,6,2,'ORD-040221#0001'),(1,350,6,3,'ORD-040221#0001');
+insert into order_detail (ordi_quantity,ordi_price,ordi_cart_id,ordi_prod_id,ordi_order_name) values
+(1,1000,7,1,'ORD-040221#0002'),(1,350,7,3,'ORD-040221#0002'),(1,2000,7,4,'ORD-040221#0001');
+insert into order_detail (ordi_quantity,ordi_price,ordi_cart_id,ordi_prod_id,ordi_order_name) values
+(1,500,8,2,'ORD-040221#0003');
+insert into order_detail (ordi_quantity,ordi_price,ordi_cart_id,ordi_prod_id,ordi_order_name) values
+(1,500,9,2,'ORD-020221#0004'),(1,350,9,3,'ORD-020221#0004');
+insert into order_detail (ordi_quantity,ordi_price,ordi_cart_id,ordi_prod_id,ordi_order_name) values
+(1,350,10,3,'ORD-030221#0005'),(1,350,10,3,'ORD-030221#0005');
+
+select * from orders;
+select * from product;
+select * from order_detail;
+select * from cart;
+
+update orders set order_name = 'ORD-030221#0003' where total_payment = 500;
+
+--a
+select c.cate_name, count(p.prod_cate_id) as Total_Product from category c join product p
+on c.cate_id = p.prod_cate_id group by c.cate_name;
+--b
+select prod_title as Product_Name, prod_stock, ordi_order_name from product join order_detail
+on prod_id = ordi_prod_id 
+group by product_name, prod_stock, ordi_order_name;
+--c
+select prod_title,count(ordi_prod_id) as Buyed from product join order_detail
+on prod_id = ordi_prod_id
+group by prod_title;
+--d
+select prod_title as Product_Name,count(order_total) as Total_Order from product join order_detail
+on prod_id = ordi_prod_id join orders
+on ordi_order_name = order_name
+group by prod_title;
+--e
+select user_name,user_email,count(order_total) as Total_Order from users join orders
+on user_id = order_user_id
+group by user_name,user_email;
+
+
+select date_part('year',order_create_on),date_part('month', order_create_on) as Bulan,sum(order_total) as Total_Order from orders
+group by order_create_on;
+
+select * from orders;
+
+
+
